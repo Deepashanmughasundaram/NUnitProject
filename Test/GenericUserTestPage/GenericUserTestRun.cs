@@ -33,7 +33,7 @@ namespace NUnitProject.Test.GenericUserTestPage
            //GenericUserSignInPage Methods
            String actual1 = GUSIP.GSigninPageheading();
            Console.WriteLine(actual1);
-           Assert.AreEqual(actual1, "Register");
+           Assert.AreEqual(actual1, "Regissster");
            test.Log(LogStatus.Pass, "Test Passed");
        }
 

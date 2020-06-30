@@ -44,7 +44,6 @@ namespace NUnitProject
 
         [TearDown]
         public void AfterClass()
-
         {
             //StackTrace details for failed Testcases
             var status = TestContext.CurrentContext.Result.Outcome.Status;
@@ -52,6 +51,10 @@ namespace NUnitProject
             var errorMessage = TestContext.CurrentContext.Result.Message;
             if (status == TestStatus.Failed)
             {
+                string currentDate = DateTime.Now.ToString("HHmmss");
+                var image = ((ITakesScreenshot)driver).GetScreenshot();
+                //Save the screenshot
+                image.SaveAsFile("C:\\Users\\deepa\\source\\repos\\NUnitProjectRepo\\Failed SS\\" + currentDate + ".png", ImageFormat.Png);
                 test.Log(LogStatus.Fail, status + errorMessage);
             }
 
