@@ -54,7 +54,7 @@ namespace NUnitProject
                 string currentDate = DateTime.Now.ToString("HHmmss");
                 var image = ((ITakesScreenshot)driver).GetScreenshot();
                 //Save the screenshot
-                image.SaveAsFile("C:\\Users\\deepa\\source\\repos\\NUnitProjectRepo\\Failed SS\\" + currentDate + ".png", ImageFormat.Png);
+                image.SaveAsFile("C:\\Users\\deepa\\source\\repos\\NUnitProjectRepo\\Failed SS\\" + currentDate + ".png", ScreenshotImageFormat.Png);
                 test.Log(LogStatus.Fail, status + errorMessage);
             }
 
